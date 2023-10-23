@@ -17,7 +17,7 @@ func main() {
 		Tags:          []string{"灵山", "微信读书"},
 		Url:           "http://103.82.52.107:5230/api/v1/memo",
 		Visibility:    "PRIVATE",
-		Token:         "eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVvIiwiaXNzIjoibWVtb3MiLCJzdWIiOiIxIiwiYXVkIjpbInVzZXIuYWNjZXNzLXRva2VuIl0sImV4cCI6MTY5ODUzMDk5NSwiaWF0IjoxNjk3OTI2MTk1fQ.s0MFNSSEBa7Cf1V_oKYWgCytkizjxr39WdrYB-XiCaE",
+		Token:         "",
 	}
 	note.ImportWeChatReadingNotes()
 }
