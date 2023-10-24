@@ -26,40 +26,6 @@ timeLayout := "2006-01-02 15:04:05"
 tags memo 的标签
 */
 
-type WechatReadingNotes struct {
-	NotesFilePath string
-	MemoTime      string
-	Visibility    string
-	Tags          []string
-	Url           string
-	Token         string
-}
-
-func NewWechatReadingNotes(notesFilePath string, memoTime string, visibility string, tags []string, url string, token string) *WechatReadingNotes {
-	return &WechatReadingNotes{NotesFilePath: notesFilePath, MemoTime: memoTime, Visibility: visibility, Tags: tags, Url: url, Token: token}
-}
-
-// 每一条 memo 的结构
-type ImportMemo struct {
-	Content    string `json:"content"`
-	Visibility string `json:"visibility"`
-	CreatedTs  int64  `json:"createdTs"`
-	UpdateTs   int64  `json:"updateTs"`
-	DisplayTs  int64  `json:"displayTs"`
-}
-
-func NewImportMemo(content string, visibility string, Time int64) *ImportMemo {
-	return &ImportMemo{Content: content, Visibility: visibility, CreatedTs: Time, UpdateTs: Time, DisplayTs: Time}
-}
-
-type ImportTag struct {
-	Name string `json:"name"`
-}
-
-func NewImportTag(name string) *ImportTag {
-	return &ImportTag{Name: name}
-}
-
 // 导入函数
 func (notes WechatReadingNotes) ImportWeChatReadingNotes() {
 	notes.MergeTags()
