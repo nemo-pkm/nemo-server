@@ -1,16 +1,5 @@
 package utils
 
-/*
-func main() {
-	slice1 := []string{"apple", "banana", "orange"}
-	slice2 := []string{"banana", "grape", "apple"}
-
-	merged := mergeAndRemoveDuplicates(slice1, slice2)
-
-	fmt.Println("Merged and deduplicated slice:", merged)
-}
-*/
-
 func MergeAndRemoveDuplicates(slice1 []string, slice2 []string) []string {
 	result := []string{}
 
