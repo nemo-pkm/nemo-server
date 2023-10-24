@@ -1,5 +1,7 @@
 wechat.txt
 wechat.json
+.idea/*
 rawjson/*
 main.go
 content.txt
+test.txt
