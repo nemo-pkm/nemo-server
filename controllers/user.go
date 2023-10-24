@@ -6,7 +6,9 @@ import (
 )
 
 func GetUserInfo(ctx *gin.Context) {
-	ReturnSuccess(ctx, http.StatusOK, "succes", "getuser", 1)
+	id := ctx.Param("id")
+	name := ctx.Param("name")
+	ReturnSuccess(ctx, http.StatusOK, name, id, 1)
 }
 
 func GetUserList(ctx *gin.Context) {
