@@ -31,7 +31,7 @@ func Router() *gin.Engine {
 			})
 		})
 		user.POST("/list", controllers.GetUserList)
-		user.GET("/info/:id/:name", controllers.GetUserInfo)
+		user.GET("/info", controllers.GetUserInfo)
 		user.POST("/signup", func(ctx *gin.Context) {
 			ctx.JSON(http.StatusOK, gin.H{
 				"userSingUp": "use",

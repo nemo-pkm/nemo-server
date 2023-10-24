@@ -6,11 +6,11 @@ import (
 )
 
 func GetUserInfo(ctx *gin.Context) {
-	id := ctx.Param("id")
-	name := ctx.Param("name")
-	ReturnSuccess(ctx, http.StatusOK, name, id, 1)
+	ReturnSuccess(ctx, http.StatusOK, "user info", "111111111", 1)
 }
 
 func GetUserList(ctx *gin.Context) {
-	ReturnError(ctx, http.StatusBadRequest, "错误400")
+	id := ctx.PostForm("id")
+	name := ctx.DefaultPostForm("name", "neo")
+	ReturnSuccess(ctx, http.StatusOK, name, id, 1)
 }
