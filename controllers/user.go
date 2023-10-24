@@ -5,20 +5,15 @@ import (
 	"net/http"
 )
 
-type UserList struct {
-	Name string `json:"name"`
-	ID   int64  `json:"id"`
-}
-
 func GetUserInfo(ctx *gin.Context) {
 	ReturnSuccess(ctx, http.StatusOK, "user info", "111111111", 1)
 }
 
 func GetUserList(ctx *gin.Context) {
-	userlist := &UserList{}
-	err := ctx.BindJSON(&userlist)
+	param := make(map[string]interface{})
+	err := ctx.BindJSON(&param)
 	if err == nil {
-		ReturnSuccess(ctx, http.StatusOK, userlist.Name, userlist.ID, 1)
+		ReturnSuccess(ctx, http.StatusOK, param["name"], param["id"], 1)
 	} else {
 		ReturnError(ctx, http.StatusNotFound, gin.H{"err": err})
 	}
